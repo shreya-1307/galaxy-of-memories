@@ -1,0 +1,457 @@
+<!-- index.html -->  
+ <!DOCTYPE html>  
+ <html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Happy Birthday Cutooooo ❤️</title>  
+<link rel="stylesheet" href="style.css">  
+</head>  
+<body>  
+       <!-- Background Music -->  
+        <audio id="bgm" loop>  
+<source src="music.mp3" type="audio/mpeg">  
+</audio>  
+<!-- Falling Petals --> 
+  <div id="petals"></div> 
+   <!-- Balloons -->  
+<div class="balloon b1"></div>  
+<div class="balloon b2"></div>  
+<div class="balloon b3"></div>  
+<div class="balloon b4"></div>  
+<div class="balloon b5"></div>  
+<div class="balloon b6"></div>  
+<div class="balloon b7"></div>  
+<!-- Shooting Stars -->  
+<div class="shootingStars">  
+<div class="shoot"></div>  
+<div class="shoot"></div>  
+<div class="shoot"></div>  
+</div>  
+<!-- Light Overlay -->  
+<div class="lightOverlay"></div>  
+<!-- Sparkles -->  <div class="sparkles"></div>  
+<!-- Kitty -->  
+<div class="kitty">🐱🎀</div> 
+<section id="intro" class="page show">  
+<div class="galaxy"></div>  
+<div class="stars"></div>  
+<div class="shootingStars"></div>  
+<div class="lightOverlay"></div>  
+<h2 class="countdown" id="count">3</h2> 
+<div class="birthdayText">  
+Happiest Birthday Cutooooo ❤️  
+</div>  <div class="liveCountdown">  
+<div class="timeBox">  
+<span id="days">00</span>  
+<p>Days</p>  
+</div>  
+<div class="timeBox">  
+<span id="hours">00</span>  
+<p>Hours</p>  
+</div>  
+<div class="timeBox">  
+<span id="minutes">00</span>  
+<p>Minutes</p>  
+</div>  
+<div class="timeBox">  
+<span id="seconds">00</span>  
+<p>Seconds</p>  
+</div>  
+</div>  
+<div class="tapText">  
+Tap Anywhere ✨  
+</div> 
+
+</div>
+</section>  
+
+<!-- =========================  
+       PASSWORD PAGE  
+========================= -->  
+<section id="login" class="page">  
+<div class="card">  
+       
+<div class="pika">OH,Sweetuuuu 😋💋</div>  
+<h1>Enter Your NickName As Password</h1>  
+<h6><i>[Hint:Pokemon]</i></h6>  
+<input id="pass" placeholder="Password">  
+<button onclick="checkPass()">  
+Unlock  
+</button>  
+<p id="msg"></p>  
+</div>  
+</section>  
+<!-- =========================  
+         WISH PAGE  
+========================= -->  
+<section id="wish" class="page">  
+<h1>Happiest Birthday Cutooooo 🤍</h1>  <p>  
+A day made special because you exist.  
+</p>  <button onclick="go('starWish')">  
+Let's celebrate 🥳
+</button>  
+</section> 
+<section id="cake" class="page">  
+<div class="partyLights"></div>  
+<div class="partyAnimals">  
+<div class="animal a1">🐻</div>  
+<div class="animal a2">🐰</div>  
+<div class="animal a3">🐱</div>  
+<div class="animal a4">🦊</div>  
+</div>  
+<div class="partyDecor">  
+<span>🎈</span>  
+<span>✨</span>  
+<span>🎉</span>  
+<span>💖</span>  
+<span>🎊</span>  
+</div> 
+ 
+
+<div class="cake3d" onclick="cutCake()">  
+<div class="top"></div>  
+<div class="layer"></div>  
+<div class="candles">  
+<span onclick="blow(this,event)"></span>  
+<span onclick="blow(this,event)"></span>  
+<span onclick="blow(this,event)"></span>  
+</div>  
+</div>  
+<button onclick="go('gift')">  
+Cut Cake 🎂  
+</button>  
+</section>  
+<!-- =========================  
+          GIFT PAGE  
+========================= -->  
+<section id="gift" class="page">  
+<h1>Open Your Gift 🎁</h1>  
+<div class="gift3d" onclick="openGift()">  
+<div class="lid"></div>  
+<div class="box"></div>  
+</div>
+</section>  
+<!-- =========================  
+        LETTER PAGE  
+========================= -->  
+<section id="letter" class="page">  
+<div class="card">  
+<h1>For You 💌</h1>  
+<p id="type"></p>  
+<button class="voiceBtn" onclick="playVoice()">  
+🎤 Play Voice Note  
+</button>  
+<audio id="voiceNote">  
+<source src="audio.ogg" type="audio/ogg">  
+</audio>  
+<button onclick="go('gallery')">  
+Memories  
+</button>  
+</div>  
+</section>  
+<!-- =========================  
+       MEMORIES GALLERY  
+========================= -->  
+<section id="gallery" class="page">  
+<h1>Some Of The Memories We Shared</h1>  
+<div class="slider3d">  
+<span style="--i:1">  
+<img src="1.jpeg">  
+</span>  
+<span style="--i:2">  
+<img src="9.jpeg">  
+</span>  
+<span style="--i:3">  
+<img src="89.jpeg">  
+</span>  
+<span style="--i:4">  
+<img src="4.jpeg">  
+</span>  
+<span style="--i:5">  
+<img src="5.jpeg">  
+</span>  
+<span style="--i:6">  
+<img src="6.jpeg">  
+</span>  
+<span style="--i:7">  
+<img src="7.jpeg">  
+</span>  
+<span style="--i:8">  
+<img src="10.jpeg">  
+</span>  
+</div>  
+<div class="galleryButtons">  
+<button onclick="go('photoTimeline')">  
+Timeline 💖  
+</button>  
+</div>  
+</section>  
+<section id="photoTimeline" class="page">  
+<h1>Our Timeline of Memories 🤍</h1>  
+<div class="timelineGrid"> 
+<div class="timelineCard">  
+<img src="36.jpeg">  
+<p>First SS I've taken of you 😂</p>  
+</div>  
+<div class="timelineCard">  
+<img src="34.jpeg">  
+<p>Our First Selfie🙂‍↔️</p>  
+</div>  
+<div class="timelineCard">  
+<img src="40.jpeg">  
+<p>First Childhood picture I've seen🙂</p>  
+</div>  
+<div class="timelineCard">  
+<img src="37.jpeg">  
+<p>Your First Dance I Saw💖</p>  
+</div>  
+<div class="timelineCard">  
+<img src="41.jpeg">  
+<p>One of My Fav Picture Of You🤍</p>  
+</div>  
+<div class="timelineCard">  
+<img src="35.jpeg">  
+<p>The SRK I have🫠</p>  
+</div>  
+<div class="timelineCard">  
+<img src="26.jpeg">  
+<p>MY Sweetuuuuu 🥰</p>  
+</div>  
+<div class="timelineCard">  
+<img src="30.jpeg">  
+<p>One of those pictures I couldn't stop looking at 🤍</p>  
+</div>  
+<div class="timelineCard">  
+<img src="31.jpeg">  
+<p>Photographer Sir🫶🏻</p>  
+</div>  
+<div class="timelineCard">  
+<img src="32.jpeg">  
+<p>New Year Gift😋</p>  
+</div>  
+<div class="timelineCard">  
+<img src="39.jpeg">  
+<p>Our 12th Ended Here🙂‍↕️</p>  
+</div>  
+<div class="timelineCard">  
+<img src="29.jpeg">  
+<p>Here is my CutieeePatootieee😘</p>  
+</div>  
+<div class="timelineCard">  
+<img src="38.jpeg">  
+<p>Gym Paglu😉</p>  
+</div>  
+<div class="timelineCard">  
+<img src="27.jpeg">  
+<p>In Formal,Handsome😭</p>  
+</div>  
+<div class="timelineCard">  
+<img src="28.jpeg">  
+<p>One of the day, you made me happiest🌚</p>  
+</div>  
+<div class="timelineCard">  
+<img src="25.jpeg">  
+<p>The moment I realised you'll be there with me for another 4 years👉🏻👈🏻</p>  
+</div>  
+<div class="timelineCard">  
+<img src="23.jpeg">  
+<p>My favourite guitarist,My only peace👄</p>  
+</div>  
+<div class="timelineCard">  
+<img src="22.jpeg">  
+<p>The day I can't forget❣️</p>  
+</div>  
+<div class="timelineCard">  
+<img src="24.jpeg">  
+<p>Saw you sleepy fr😗</p>  
+</div>  
+<div class="timelineCard">  
+<img src="21.jpeg">  
+<p>And here we are and more to go💫</p>  
+</div>  
+</div>  
+<button onclick="go('calendar')">  
+       Keep Going 🫶🏻  
+</button>  
+</section>  
+<!-- CALENDAR PAGE -->  
+ <section id="calendar" class="page"> 
+ <h1>July 2005 🤍</h1>  
+ <p class="calendarText">  
+The month my favourite person was born 💕   
+</p>  
+<p class="dateHint">
+✨Tap the date that changed my world✨
+</p>
+<div class="calendarBox">  
+<div class="month">July 2005</div>  
+<div class="days">  
+<span>Sun</span>  
+<span>Mon</span>  
+<span>Tue</span>  
+<span>Wed</span>  
+<span>Thu</span>  
+<span>Fri</span>  
+<span>Sat</span>  
+</div>  
+<div class="dates">  
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+
+<span>1</span>
+<span>2</span>
+<span>3</span>
+<span>4</span>
+<span>5</span>
+<span>6</span>
+<span>7</span>
+<span>8</span>
+<span>9</span>
+<span>10</span>
+<span>11</span>
+<span>12</span>
+
+<span class="specialDay">  
+13   
+</span>  
+<span>14</span>
+<span>15</span>
+<span>16</span>
+<span>17</span>
+<span>18</span>
+<span>19</span>
+<span>20</span>
+<span>21</span>
+<span>22</span>
+<span>23</span>
+<span>24</span>
+<span>25</span>
+<span>26</span>
+<span>27</span>
+<span>28</span>
+<span>29</span>
+<span>30</span>
+<span>31</span>
+
+</div>  
+</div>  
+<button onclick="go('constellation')">  
+       Continue the Story  
+</button>  
+</section>  
+<!-- CONSTELLATION PAGE -->  
+ <section id="constellation" class="page">  
+<h1>Written In The Stars</h1>  
+<div class="constellationBox"> 
+<div class="star s1"></div>  
+<div class="star s2"></div>  
+<div class="star s3"></div>  
+<div class="star s4"></div>  
+<div class="star s5"></div>  
+<div class="star s6"></div>  
+
+<div class="l1"></div>  
+<div class="l2"></div>  
+<div class="l3"></div>  
+<div class="l4"></div>  
+<div class="l5"></div>  
+</div>  
+<div class ="moon"></div>
+<div id="galaxy"></div>
+<p class="constellationText">  
+Some people are simply written in the stars 🤍  
+</p>  
+<button onclick="go('heartPage')">  
+Wait...There's More  
+</button>  
+</section>  
+<section id="heartPage" class="page">  
+<h1>Made With Love ❤️</h1>  
+<div class="heartContainer">  
+<svg class="loveHeart" viewBox="0 0 512 512">  
+<path  
+id="heartPath"  
+fill="none"  
+d="  
+M256 464  
+C256 464,32 320,32 176  
+C32 88,96 32,176 32  
+C224 32,256 64,256 64  
+C256 64,288 32,336 32  
+C416 32,480 88,480 176  
+C480 320,256 464,256 464  
+"/>
+
+<text class="heartLayer">  
+<textPath href="#heartPath" id="heartText">  
+💖 Happy Birthday Cutoooooo 💖 Happy Birthday Cutoooooo 💖 Happy Birthday Cutoooooo 💖 Happy Birthday Cutoooooo 💖  
+</textPath>  
+</text>  
+</svg>  
+</div>  
+<p>  
+Every beat of this heart carries a little piece of you ✨  
+</p>  
+<button onclick="go('surprise')">  
+Open The Secret 🤍  
+</button>  
+</section>  
+<!-- SURPRISE PAGE -->  
+<section id="surprise" class="page">  
+<h1>One More Thing...</h1>  
+<p class="heartHint">  
+Click the heart slowly 🤍  
+</p>  
+<div class="secretHeart heartbeat" onclick="openSecretHeart()">  
+🤍  
+</div>  
+<p id="loveMsg"></p>  
+<button id="nextEndBtn" onclick="go('end')">  
+Always You 💞  
+</button>  
+</section>  
+<section id="starWish" class="page">  
+<h1>Make A Birthday Wish ✨</h1>  
+<div class="wishStar">⭐</div>  
+<p id="wishText">
+Before we celebrate...<br>
+Close your eyes, make a wish,<br>
+and let the stars keep it safe. ✨🤍
+</p>
+<button onclick="startWish()">  
+Make A Wish 🤍  
+</button>  
+</section>  
+<!-- =========================  
+          FINAL PAGE  
+========================= -->  
+<section id="end" class="page">  
+<div class="endingGalaxy"></div>  
+<h1 id="endingType"></h1>  
+<p class="endingQuote">  
+And no matter how much time passes…  
+You will always remain special to me 🤍   
+</p>  
+<div class="heartReplay"> 🤍 </div>
+<p class="hint">
+       Follow the heartbeat...It knows the way back
+</p>
+</section>  
+<div id="secretPopup">  
+<div class="secretCard">  
+<h2>You found my hidden heart 🤍</h2>  <p>  
+No matter where life goes...  
+you'll always have a special place in my heart...  
+</p>  
+<button onclick="closeSecretHeart()">  
+Close  
+</button>  
+</div>  
+</div>  
+<script src="script.js"></script>  
+</body>  
+</html>
