@@ -304,7 +304,7 @@ document.getElementById("pass")
 if(pass === "pikachu"){
 
 
-
+vibratePhone(80);
 show("wish");
 
 
@@ -774,6 +774,7 @@ lid.style.transform =
 gift.style.transform =
 
 "scale(1.05)";
+vibratePhone(100);
 
 
 
@@ -1449,6 +1450,8 @@ document.getElementById("secretPopup")
 
 function openSecretHeart(){
 
+  vibratePhone(150);
+
 
 
 document.getElementById("secretPopup").style.display="flex";
@@ -1769,6 +1772,8 @@ const specialDay =
 document.querySelector(".specialDay");
 
 specialDay.addEventListener("click", () => {
+     
+     vibratePhone(120);
 
     for(let i=0;i<5;i++){
 
@@ -1806,4 +1811,8 @@ clearInterval(fade);
 },150);
 
 }
-
+function vibratePhone(time=50){
+  if(navigator.vibrate){
+    navigator.vibrate(time);
+  }
+}
