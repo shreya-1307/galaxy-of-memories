@@ -1768,18 +1768,15 @@ size + "px";
 
     galaxy.appendChild(star);
 }
-const specialDay =
-document.querySelector(".specialDay");
+const specialDay = document.querySelector(".specialDay");
 
 specialDay.addEventListener("click", () => {
-     
-     vibratePhone(120);
 
-    for(let i=0;i<5;i++){
+    for(let i = 0; i < 8; i++){
 
         setTimeout(()=>{
-            createConfetti();
-        }, i*300);
+            createRosePetals();
+        }, i * 250);
 
     }
 
@@ -1815,4 +1812,36 @@ function vibratePhone(time=50){
   if(navigator.vibrate){
     navigator.vibrate(time);
   }
+}
+function createRosePetals(){
+
+    for(let i=0;i<35;i++){
+
+        const petal = document.createElement("img");
+
+        petal.src = "petal.png";
+
+        petal.className = "rosePetal";
+
+        petal.style.left = Math.random()*100 + "vw";
+
+        petal.style.width = (18 + Math.random()*18) + "px";
+
+        petal.style.transform =
+        `rotate(${Math.random()*360}deg)`;
+
+        petal.style.animationDuration =
+        (5 + Math.random()*3) + "s";
+
+        petal.style.animationDelay =
+        Math.random()*0.8 + "s";
+
+        document.body.appendChild(petal);
+
+        petal.addEventListener("animationend",()=>{
+            petal.remove();
+        });
+
+    }
+
 }
