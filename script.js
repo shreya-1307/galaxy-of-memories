@@ -1809,6 +1809,7 @@ function vibratePhone(time=50){
     navigator.vibrate(time);
   }
 }
+
 /* =====================================
         PREMIUM FIREWORK ENGINE
 ===================================== */
@@ -2157,3 +2158,92 @@ function playFireworkSound(){
 
 }
 }
+/* ===========================
+      STARS
+=========================== */
+
+const stars =
+document.getElementById("stars");
+
+for(let i=0;i<180;i++){
+
+const s=document.createElement("div");
+
+s.className="star";
+
+const size=Math.random()*2+1;
+
+s.style.width=size+"px";
+s.style.height=size+"px";
+
+s.style.left=Math.random()*100+"%";
+s.style.top=Math.random()*100+"%";
+
+s.style.animationDuration=
+2+Math.random()*4+"s,"+
+(12+Math.random()*18)+"s";
+
+stars.appendChild(s);
+
+}
+const fireflies =
+document.getElementById("fireflies");
+
+for(let i=0;i<18;i++){
+
+const f=document.createElement("div");
+
+f.className="firefly";
+
+f.style.left=Math.random()*100+"%";
+
+f.style.bottom=Math.random()*25+"%";
+
+f.style.animationDelay=
+Math.random()*12+"s";
+
+f.style.animationDuration=
+10+Math.random()*8+"s";
+
+fireflies.appendChild(f);
+
+}
+function createShootingStar(){
+
+const area=
+document.getElementById("shootingStars");
+
+const s=document.createElement("div");
+
+s.className="shootingStar";
+
+s.style.left=
+(60+Math.random()*40)+"%";
+
+s.style.top=
+Math.random()*35+"%";
+
+area.appendChild(s);
+
+setTimeout(()=>{
+
+s.remove();
+
+},1800);
+
+}
+
+setInterval(()=>{
+
+createShootingStar();
+
+},8000+Math.random()*6000);
+document.querySelector(".calendarBox").style.transform =
+"scale(1.04)";
+
+setTimeout(()=>{
+
+document.querySelector(".calendarBox").style.transform =
+"scale(1)";
+
+},500);
