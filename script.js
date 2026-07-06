@@ -1974,6 +1974,30 @@ class Particle {
 }
 function explode(x, y, color) {
 
+    // Sky flash
+    const overlay = document.getElementById("fireworkOverlay");
+
+    overlay.classList.add("skyFlash");
+
+    setTimeout(() => {
+        overlay.classList.remove("skyFlash");
+    }, 350);
+
+    // Camera shake
+    document.body.style.animation = "boom .25s";
+
+    setTimeout(() => {
+        document.body.style.animation = "";
+    }, 250);
+
+    // Brightness flash
+    document.body.style.filter = "brightness(1.15)";
+
+    setTimeout(() => {
+        document.body.style.filter = "brightness(1)";
+    }, 180);
+
+    // Particles
     for (let i = 0; i < 220; i++) {
 
         particles.push(
@@ -2043,8 +2067,14 @@ function startBirthdayFireworks(){
     const title =
     document.getElementById("birthdayTitle");
 
-    overlay.style.visibility="visible";
-    overlay.style.opacity="1";
+    overlay.style.transition = "none";
+overlay.style.visibility = "visible";
+overlay.style.opacity = "1";
+
+requestAnimationFrame(() => {
+    overlay.style.transition = "opacity 1.2s ease";
+});
+    playFireworkSound();
 
     title.style.opacity="0";
 
@@ -2079,33 +2109,51 @@ function startBirthdayFireworks(){
     },5600);
 
     // Fade out
-    setTimeout(()=>{
+    setTimeout(() => {
 
-        overlay.style.opacity="0";
+    overlay.style.transition = "opacity 1.5s ease";
+    overlay.style.opacity = "0";
 
-        setTimeout(()=>{
+    setTimeout(() => {
 
-            overlay.style.visibility="hidden";
+        overlay.style.visibility = "hidden";
+        title.style.opacity = "0";
 
-            title.style.opacity="0";
+    }, 1500);
 
-        },1000);
+}, 9000);
 
-    },9000);
+function playFireworkSound(){
+
+    const sound = document.getElementById("fireworkSound");
+    const bgm = document.getElementById("bgm");
+
+    bgm.volume = 0.08;
+
+    sound.currentTime = 0;
+    sound.volume = 0;
+
+    sound.play().catch(()=>{});
+
+    let v = 0;
+
+    const fade = setInterval(()=>{
+
+        v += 0.05;
+
+        sound.volume = Math.min(v,0.75);
+
+        if(v >= 0.75){
+            clearInterval(fade);
+        }
+
+    },60);
+
+    sound.onended = ()=>{
+
+        bgm.volume = 0.18;
+
+    };
 
 }
-overlay.classList.add("skyFlash");
-
-setTimeout(()=>{
-overlay.classList.remove("skyFlash");
-},350);
-document.body.style.animation="boom .25s";
-
-setTimeout(()=>{
-document.body.style.animation="";
-},250);
-document.body.style.filter="brightness(1.15)";
-
-setTimeout(()=>{
-document.body.style.filter="brightness(1)";
-},180);
+}
