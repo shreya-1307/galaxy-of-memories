@@ -1531,7 +1531,7 @@ document.getElementById("wishText");
 
 
 text.innerHTML =
-"✨ Wish accepted.<br>Your wish has been safely sent to the stars...<br><br>Now, let's celebrate. 🎂🤍";
+"Wish accepted.<br>Your wish has been safely sent to the stars...<br><br>Now, let's celebrate. 🎂🤍";
 
 
 
