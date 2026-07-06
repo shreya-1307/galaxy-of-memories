@@ -5315,3 +5315,926 @@ animation:skyFlash .35s;
 100%{transform:translate(0);}
 
 }
+/* ======================================
+        PREMIUM CALENDAR AURORA
+====================================== */
+
+#calendarPage{
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Aurora Layer 1 */
+#calendarPage::before{
+    content: "";
+    position: absolute;
+    inset: -40%;
+    z-index: -2;
+
+    background:
+    radial-gradient(circle at 20% 25%,
+    rgba(90,255,210,.22) 0%,
+    transparent 28%),
+
+    radial-gradient(circle at 80% 15%,
+    rgba(120,180,255,.18) 0%,
+    transparent 30%),
+
+    radial-gradient(circle at 45% 80%,
+    rgba(200,120,255,.18) 0%,
+    transparent 32%);
+
+    filter: blur(120px) saturate(180%);
+    animation: auroraMove1 18s ease-in-out infinite alternate;
+}
+
+/* Aurora Layer 2 */
+#calendarPage::after{
+    content: "";
+    position: absolute;
+    inset: -35%;
+    z-index: -3;
+
+    background:
+    radial-gradient(circle at 30% 70%,
+    rgba(255,120,180,.14),
+    transparent 30%),
+
+    radial-gradient(circle at 70% 50%,
+    rgba(120,255,170,.15),
+    transparent 32%),
+
+    radial-gradient(circle at 55% 20%,
+    rgba(130,170,255,.14),
+    transparent 32%);
+
+    filter: blur(150px);
+    animation: auroraMove2 25s ease-in-out infinite alternate;
+}
+
+@keyframes auroraMove1{
+
+0%{
+transform:
+translate(-5%,-4%)
+rotate(-8deg)
+scale(1);
+}
+
+50%{
+transform:
+translate(4%,3%)
+rotate(5deg)
+scale(1.15);
+}
+
+100%{
+transform:
+translate(-2%,5%)
+rotate(-6deg)
+scale(1.08);
+}
+
+}
+
+@keyframes auroraMove2{
+
+0%{
+transform:
+translate(4%,3%)
+rotate(8deg)
+scale(1.05);
+}
+
+50%{
+transform:
+translate(-5%,5%)
+rotate(-5deg)
+scale(1.18);
+}
+
+100%{
+transform:
+translate(3%,-5%)
+rotate(6deg)
+scale(1.10);
+}
+
+}
+.calendar{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.15);
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.35);
+
+}
+.calendar{
+
+animation:floatCalendar 6s ease-in-out infinite;
+
+}
+
+@keyframes floatCalendar{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+}
+/* ===========================
+        PREMIUM SKY
+=========================== */
+
+#calendar{
+
+position:relative;
+
+overflow:hidden;
+
+background:
+
+linear-gradient(
+180deg,
+#132850 0%,
+#0d1b38 35%,
+#07101f 70%,
+#02040a 100%);
+
+}
+
+/* Sky */
+
+.sky{
+
+position:absolute;
+
+inset:0;
+
+overflow:hidden;
+
+z-index:0;
+
+}
+
+/* Content */
+
+.calendarContent{
+
+position:relative;
+
+z-index:100;
+
+}
+
+/* Moon */
+
+.moon{
+
+position:absolute;
+
+top:8%;
+
+right:7%;
+
+width:90px;
+
+height:90px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(circle,
+#fff 0%,
+#f6f6f6 45%,
+#d9d9d9 100%);
+
+box-shadow:
+
+0 0 30px rgba(255,255,255,.8),
+0 0 80px rgba(255,255,255,.35);
+
+animation:
+
+moonGlow 5s ease-in-out infinite alternate;
+
+}
+
+@keyframes moonGlow{
+
+from{
+
+box-shadow:
+
+0 0 25px rgba(255,255,255,.6);
+
+}
+
+to{
+
+box-shadow:
+
+0 0 60px rgba(255,255,255,.9),
+0 0 140px rgba(255,255,255,.45);
+
+}
+
+}
+.aurora{
+
+position:absolute;
+
+width:180vw;
+height:65vh;
+
+border-radius:50%;
+
+opacity:.42;
+
+filter:
+blur(85px)
+saturate(200%)
+contrast(120%);
+
+mix-blend-mode:screen;
+
+transform-origin:center;
+
+will-change:transform,opacity;
+
+}
+
+.aurora1{
+
+background:
+
+linear-gradient(
+90deg,
+
+#6fffd8,
+
+#64b5ff,
+
+#b47dff);
+
+top:-10%;
+
+left:-20%;
+
+animation:
+
+auroraOne 18s ease-in-out infinite alternate;
+
+}
+
+.aurora2{
+
+background:
+
+linear-gradient(
+90deg,
+
+#69f0ae,
+
+#7c9dff,
+
+#ff8ad8);
+
+bottom:-15%;
+
+right:-20%;
+
+animation:
+
+auroraTwo 24s ease-in-out infinite alternate;
+
+}
+
+.aurora3{
+
+background:
+
+linear-gradient(
+90deg,
+
+#8df7ff,
+
+#8b8cff,
+
+#d38fff);
+
+top:25%;
+
+left:-30%;
+
+opacity:.25;
+
+animation:
+
+auroraThree 30s linear infinite;
+
+}
+@keyframes auroraOne{
+
+0%{
+
+transform:
+
+rotate(-8deg)
+translateX(-8%)
+scale(1);
+
+}
+
+100%{
+
+transform:
+
+rotate(8deg)
+translateX(8%)
+scale(1.25);
+
+}
+
+}
+
+@keyframes auroraTwo{
+
+0%{
+
+transform:
+
+rotate(10deg)
+translateY(3%)
+scale(1);
+
+}
+
+100%{
+
+transform:
+
+rotate(-10deg)
+translateY(-4%)
+scale(1.3);
+
+}
+
+}
+
+@keyframes auroraThree{
+
+0%{
+
+transform:
+
+translateX(-5%)
+scale(1);
+
+}
+
+50%{
+
+transform:
+
+translateX(6%)
+scale(1.2);
+
+}
+
+100%{
+
+transform:
+
+translateX(-5%)
+scale(1);
+
+}
+
+}
+.calendarBox{
+
+background:
+
+rgba(255,255,255,.08);
+
+backdrop-filter:blur(22px);
+
+border:
+
+1px solid rgba(255,255,255,.15);
+
+box-shadow:
+
+0 20px 60px rgba(0,0,0,.45);
+
+animation:
+
+floatCard 6s ease-in-out infinite;
+
+}
+
+@keyframes floatCard{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+}
+/* ===========================
+        STARS
+=========================== */
+
+#stars{
+
+position:absolute;
+inset:0;
+
+overflow:hidden;
+
+}
+
+.star{
+
+position:absolute;
+
+border-radius:50%;
+
+background:white;
+
+box-shadow:
+
+0 0 8px white,
+0 0 15px white;
+
+animation:
+
+twinkle linear infinite,
+drift linear infinite;
+
+}
+
+@keyframes twinkle{
+
+0%{
+
+opacity:.2;
+transform:scale(.6);
+
+}
+
+50%{
+
+opacity:1;
+transform:scale(1.25);
+
+}
+
+100%{
+
+opacity:.3;
+transform:scale(.7);
+
+}
+
+}
+
+@keyframes drift{
+
+from{
+
+translate:0 0;
+
+}
+
+to{
+
+translate:0 -18px;
+
+}
+
+}
+/* ===========================
+      SHOOTING STAR
+=========================== */
+
+#shootingStars{
+
+position:absolute;
+inset:0;
+
+overflow:hidden;
+
+pointer-events:none;
+
+}
+
+.shootingStar{
+
+position:absolute;
+
+width:180px;
+height:2px;
+
+background:
+
+linear-gradient(
+90deg,
+white,
+rgba(255,255,255,0));
+
+transform:rotate(-35deg);
+
+box-shadow:
+
+0 0 15px white;
+
+animation:
+
+shoot 1.5s linear forwards;
+
+}
+
+@keyframes shoot{
+
+0%{
+
+opacity:0;
+
+transform:
+
+translate(0,0)
+rotate(-35deg);
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+transform:
+
+translate(-700px,450px)
+rotate(-35deg);
+
+}
+
+}
+/* ===========================
+      FLOATING LIGHTS
+=========================== */
+
+#fireflies{
+
+position:absolute;
+
+inset:0;
+
+overflow:hidden;
+
+}
+
+.firefly{
+
+position:absolute;
+
+width:4px;
+height:4px;
+
+border-radius:50%;
+
+background:#fff7a0;
+
+box-shadow:
+
+0 0 12px #fff7a0,
+0 0 22px #ffe066;
+
+animation:
+
+fly 12s linear infinite;
+
+}
+
+@keyframes fly{
+
+0%{
+
+transform:
+
+translateY(0)
+translateX(0);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+80%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+
+translateY(-250px)
+translateX(60px);
+
+opacity:0;
+
+}
+
+}
+@keyframes auroraBreath{
+
+0%{
+
+filter:
+blur(85px)
+brightness(1);
+
+opacity:.35;
+
+}
+
+50%{
+
+filter:
+blur(95px)
+brightness(1.25);
+
+opacity:.55;
+
+}
+
+100%{
+
+filter:
+blur(90px)
+brightness(1.05);
+
+opacity:.40;
+
+}
+
+}
+.aurora1{
+
+animation:
+
+auroraOne 20s ease-in-out infinite alternate,
+
+auroraBreath 6s ease-in-out infinite;
+
+}
+
+.aurora2{
+
+animation:
+
+auroraTwo 25s ease-in-out infinite alternate,
+
+auroraBreath 8s ease-in-out infinite reverse;
+
+}
+
+.aurora3{
+
+animation:
+
+auroraThree 30s linear infinite,
+
+auroraBreath 10s ease-in-out infinite;
+
+}
+.moon{
+
+position:absolute;
+
+top:7%;
+right:7%;
+
+width:95px;
+height:95px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(circle at 35% 30%,
+
+#ffffff,
+
+#f4f4f4 45%,
+
+#dadada 100%);
+
+box-shadow:
+
+0 0 25px rgba(255,255,255,.9),
+
+0 0 70px rgba(255,255,255,.45),
+
+0 0 140px rgba(255,255,255,.15);
+
+animation:
+
+moonGlow 5s ease-in-out infinite alternate,
+
+moonFloat 12s ease-in-out infinite;
+
+}
+
+@keyframes moonFloat{
+
+0%,100%{
+
+transform:
+translateY(0);
+
+}
+
+50%{
+
+transform:
+translateY(-8px);
+
+}
+
+}
+.specialDay{
+
+position:relative;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#FFD86F,
+
+#FFC400);
+
+color:#111;
+
+font-weight:bold;
+
+border-radius:50%;
+
+box-shadow:
+
+0 0 15px rgba(255,215,0,.7),
+
+0 0 40px rgba(255,215,0,.35);
+
+animation:
+
+magicPulse 2.8s ease-in-out infinite;
+
+}
+
+@keyframes magicPulse{
+
+0%,100%{
+
+transform:scale(1);
+
+box-shadow:
+
+0 0 10px gold;
+
+}
+
+50%{
+
+transform:scale(1.12);
+
+box-shadow:
+
+0 0 28px gold,
+
+0 0 60px rgba(255,215,0,.45);
+
+}
+
+}
+.calendarBox{
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+.calendarBox::before{
+
+content:"";
+
+position:absolute;
+
+left:-120%;
+
+top:0;
+
+width:60%;
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.25),
+
+transparent);
+
+transform:skewX(-20deg);
+
+animation:
+
+glassShine 8s linear infinite;
+
+}
+
+@keyframes glassShine{
+
+100%{
+
+left:180%;
+
+}
+
+}
+#calendar::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+pointer-events:none;
+
+background:
+
+radial-gradient(circle,
+
+transparent 40%,
+
+rgba(0,0,0,.35) 100%);
+
+}
+#calendar button{
+
+transition:.35s;
+
+}
+
+#calendar button:hover{
+
+transform:
+
+translateY(-4px)
+scale(1.03);
+
+box-shadow:
+
+0 15px 35px rgba(255,192,203,.35);
+
+}
