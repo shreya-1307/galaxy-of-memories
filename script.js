@@ -2077,7 +2077,7 @@ requestAnimationFrame(() => {
 });
     setTimeout(() => {
     playFireworkSound();
-}, 4000);
+}, 3000);
 
     title.style.opacity="0";
 
