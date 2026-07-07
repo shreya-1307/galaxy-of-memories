@@ -2075,7 +2075,9 @@ overlay.style.opacity = "1";
 requestAnimationFrame(() => {
     overlay.style.transition = "opacity 1.2s ease";
 });
+    setTimeout(() => {
     playFireworkSound();
+}, 2000);
 
     title.style.opacity="0";
 
