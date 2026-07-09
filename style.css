@@ -4301,43 +4301,119 @@ margin-top:30px;
 }
 
 /* =========================
-      END TYPEWRITER
+        FINAL PAGE
 ========================= */
 
 #end{
-background:
-radial-gradient(circle at top,
-#2f0c48,
-#14051f,
-#05010a 80%);
-}
 
-.endingGalaxy{
+position:relative;
+overflow:hidden;
+
+background:
+
+/* Elegant white glow */
+radial-gradient(
+circle at 95% 30%,
+rgba(255,255,255,.98) 0%,
+rgba(255,255,255,.82) 20%,
+rgba(255,255,255,.45) 38%,
+transparent 62%),
+
+/* Soft pink glow */
+radial-gradient(
+circle at 15% 15%,
+rgba(255,255,255,.22),
+transparent 42%),
+
+/* Bottom blush */
+radial-gradient(
+circle at 50% 100%,
+rgba(255,255,255,.15),
+transparent 45%),
+
+/* Main Gradient */
+linear-gradient(
+120deg,
+#ff5d9b 0%,
+#ff73ad 20%,
+#ff8fbc 45%,
+#ffb8d7 72%,
+#fff0f7 100%);
+
+}
+#end::after{
+
+content:"";
+
 position:absolute;
-width:100%;
-height:100%;
+inset:0;
 
-background:
-radial-gradient(circle,
-rgba(255,255,255,.06),
-transparent 70%);
+pointer-events:none;
+
+background-image:
+
+radial-gradient(rgba(255,255,255,.9) 1.5px,transparent 2px),
+radial-gradient(rgba(255,220,235,.8) 1px,transparent 2px);
+
+background-size:
+140px 140px,
+220px 220px;
+
+opacity:.55;
+
+animation:
+sparkleMove 18s linear infinite,
+sparkleGlow 3s ease-in-out infinite alternate;
+
 }
+#end h1{
 
-#endingType{
-font-size:42px;
-max-width:80%;
-line-height:1.6;
+color:white;
+
+font-size:48px;
 
 text-shadow:
-0 0 18px #ff8fd8;
-}
-.constellation{
-position:relative;
-width:320px;
-height:260px;
-margin:40px auto;
-}
+0 0 18px rgba(255,255,255,.9),
+0 0 35px rgba(255,120,180,.45);
 
+}
+#endingType{
+
+position:relative;
+z-index:2;
+
+max-width:850px;
+
+font-size:23px;
+
+line-height:2;
+
+color:#7b2950;
+
+font-weight:500;
+
+text-shadow:
+0 2px 6px rgba(255,255,255,.7);
+
+animation:fadeUp 1.2s ease;
+
+}
+.finalSign{
+
+margin-top:35px;
+
+font-size:30px;
+
+font-family:"Dancing Script",cursive;
+
+color:#ff2f7c;
+
+text-shadow:
+0 0 12px rgba(255,255,255,.7);
+
+animation:heartbeat 2s infinite;
+
+}
 /* Stars */
 
 .star{
@@ -4842,9 +4918,6 @@ font-size:20px;
 font-weight:bold;
 letter-spacing:2px;
 }
-/* =========================
-       MAKE A WISH PAGE
-========================= */
 
 /* =========================
        MAKE A WISH PAGE
@@ -6427,4 +6500,3 @@ box-shadow:
 0 15px 35px rgba(255,192,203,.35);
 
 }
-
