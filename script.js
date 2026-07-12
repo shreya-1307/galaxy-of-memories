@@ -371,7 +371,7 @@ typeLetter();
 
 const birthdayDate =
 
-new Date("July 13, 2026 00:00:00").getTime();
+new Date("July 13, 2027 00:00:00").getTime();
 
 
 
